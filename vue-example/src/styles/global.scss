@@ -1,0 +1,60 @@
+@import 'variables';
+
+body {
+	h1, h2, h3, h4, h5 {
+		margin: 0;
+		border-bottom: 2px solid $border-color-accent;
+		padding-bottom: 5px;
+		width: 100%;
+
+		&.no-border {
+			border: none;
+		}
+	}
+
+	h1 {
+		margin-bottom: 20px;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	a[href]:not(.md-button), a[href]:not(.md-button) i, a[href]:not(.md-button) i.md-icon.md-theme-default {
+		color: $link-color;
+
+		&:hover, &:hover i.md-icon.md-theme-default, &:hover i &.router-link-exact-active, &.router-link-exact-active i, &.router-link-exact-active i.md-icon.md-theme-default {
+			color: $link-color-hover;
+			text-decoration: none;
+		}
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	.align-right {
+		text-align: right;
+	}
+
+	.md-layout {
+		width: 100%;
+	}
+
+	.pull-left {
+		float: left;
+	}
+
+	.pull-right {
+		float: right;
+	}
+
+	.relative {
+		position: relative;
+	}
+
+	.absolute {
+		position: absolute;
+	}
+}

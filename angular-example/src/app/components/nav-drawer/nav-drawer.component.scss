@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.mat-drawer {
+	padding: 15px;
+	position: fixed;
+	width: $nav-drawer-width;
+	top: $header-toolbar-height;
+	bottom: 0;
+
+	.menu-links a[href] {
+		display: block;
+		margin-bottom: 15px;
+
+		.mat-icon {
+			float: left;
+			margin: -2px 7px 0 0;
+		}
+	}
+}

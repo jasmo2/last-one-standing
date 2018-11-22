@@ -1,0 +1,15 @@
+<div fxLayout
+     fxFill
+     fxLayoutGap="15px">
+	<div *ngIf="album"
+	     fxFlex="25%">
+		<img [src]="'backend/covers/' + album.coverImg" />
+		<h3 class="no-border">
+			{{album.title}}
+		</h3>
+	</div>
+	<div *ngIf="songs && songs.length"
+	     fxFlex>
+		<song-list-component [songs]="songs"></song-list-component>
+	</div>
+</div>

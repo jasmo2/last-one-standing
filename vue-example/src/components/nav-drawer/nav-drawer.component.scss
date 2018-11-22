@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.md-drawer.md-left {
+	padding: 15px;
+	position: fixed;
+	width: $nav-drawer-width;
+	top: $header-toolbar-height;
+
+	.menu-links a[href]:not(.md-button) {
+		display: block;
+		margin-bottom: 15px;
+
+		&.router-link-exact-active {
+			color: white;
+		}
+	}
+}

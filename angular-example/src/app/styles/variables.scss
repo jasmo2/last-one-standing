@@ -1,0 +1,11 @@
+@import '../../../node_modules/@angular/material/theming';
+
+$header-toolbar-height: 60px;
+$player-height: 90px;
+$nav-drawer-width: 250px;
+$body-background: mat-color($mat-grey, 900);
+$border-color-accent: mat-color($mat-blue, A200);
+$link-color: mat-color($mat-blue-grey, A200);
+$link-color-hover: mat-color($mat-grey, A100);
+$song-icon-color: mat-color($mat-blue-grey, A100);
+$player-background-color: mat-color($mat-blue-grey, 800);

@@ -1,0 +1,10 @@
+@import "../../node_modules/vue-material/dist/theme/engine";
+
+$header-toolbar-height: 60px;
+$player-height: 90px;
+$nav-drawer-width: 250px;
+$border-color-accent: md-get-palette-color(blue, A200);
+$link-color: md-get-palette-color(bluegrey, A200);
+$link-color-hover: md-get-palette-color(white, 50);
+$song-icon-color: md-get-palette-color(bluegrey, A100);
+$player-background-color: md-get-palette-color(bluegrey, 800);

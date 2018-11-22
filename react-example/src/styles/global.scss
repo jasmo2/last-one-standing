@@ -1,0 +1,77 @@
+@import 'variables';
+
+html body {
+	font-family: Roboto,Noto Sans,sans-serif;
+	background: #303030;
+	color: white;
+
+	h1, h2, h3, h4, h5 {
+		margin: 0;
+		border-bottom: 2px solid $color-accent;
+		padding-bottom: 5px;
+		width: 100%;
+
+		&.no-border {
+			border: none;
+		}
+	}
+
+	h1 {
+		margin-bottom: 20px;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	a[href] {
+		text-decoration: none;
+	}
+
+	a[href]:not(.button-link), a[href]:not(.button-link) span.material-icons {
+		color: $link-color;
+		text-decoration: none;
+
+		&:hover, &:hover span.material-icons, &.active, &.active span.material-icons {
+			color: $link-color-hover;
+		}
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	.align-right {
+		text-align: right;
+	}
+
+	.md-layout {
+		width: 100%;
+	}
+
+	.pull-left {
+		float: left;
+	}
+
+	.pull-right {
+		float: right;
+	}
+
+	.relative {
+		position: relative;
+	}
+
+	.absolute {
+		position: absolute;
+	}
+
+	.overflow-visible {
+		overflow: visible;
+	}
+}

@@ -1,0 +1,18 @@
+class StorageServiceSingleton {
+    private _storage: Storage = localStorage;
+
+    public get<T>(key: string): T {
+        return JSON.parse(this._storage.getItem(key));
+    }
+
+    public getOrDefault<T>(key: string, value: T): T {
+        const storedValue = this.get<T>(key);
+        return storedValue === null || storedValue === undefined ? value : storedValue;
+    }
+
+    public set(key: string, value: any): void {
+        this._storage.setItem(key, JSON.stringify(value));
+    }
+}
+
+export const StorageService = new StorageServiceSingleton();

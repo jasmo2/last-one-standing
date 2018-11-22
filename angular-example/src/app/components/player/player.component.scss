@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+
+mat-toolbar {
+	background: $player-background-color;
+	font-size: 14px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	height: $player-height;
+	min-height: auto;
+
+	button.active:not([disabled]) mat-icon {
+		color: $border-color-accent;
+	}
+}
+
+.mat-progress-bar /deep/ .mat-progress-bar-primary.mat-progress-bar-fill {
+	transition: initial;
+}
+
+.song-details {
+	img {
+		max-height: 70px;
+	}
+
+	> div {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+
+		a {
+			padding-left: 10px;
+		}
+	}
+
+	button {
+		margin: -3px 0 0 0px;
+	}
+}
+
+.controls {
+	padding-bottom: 5px;
+}
+
+.progress {
+	padding: 0 10px;
+
+	> div {
+		overflow: hidden;
+		padding: 8px 0;
+	}
+}
+
+.volume > div {
+	margin-top: 2px;
+	padding: 8px 0;
+}

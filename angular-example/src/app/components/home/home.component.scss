@@ -1,0 +1,58 @@
+@import '../../styles/variables.scss';
+
+h2 {
+	margin-top: 30px;
+
+	> span {
+		position: relative;
+
+		button {
+			position: absolute;
+			top: -6px;
+			right: -45px;
+		}
+	}
+}
+
+#suggested-songs {
+	li {
+		list-style: none;
+		padding: 15px;
+
+		.img-wrapper:hover, .img-wrapper.active {
+			img {
+				filter: brightness(0.5);
+				transform: scale(1.2);
+			}
+
+			mat-icon {
+				display: block;
+			}
+		}
+
+		img {
+			transition: all 300ms ease;
+			-webkit-backface-visibility: hidden;
+			-webkit-perspective: 1000;
+		}
+
+		.img-wrapper {
+			cursor: pointer;
+			position: relative;
+			overflow: hidden;
+
+			mat-icon {
+				font-size: 72px;
+				color: $song-icon-color;
+				display: none;
+				position: absolute;
+				top: calc(50% - 36px);
+				left: calc(50% - 36px);
+			}
+		}
+
+		.details {
+			font-size: 15px;
+		}
+	}
+}

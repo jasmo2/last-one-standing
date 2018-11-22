@@ -1,0 +1,79 @@
+<div>
+	<table mat-table
+	       *ngIf="songs && songs.length"
+	       [dataSource]="songs"
+	       class="full-width">
+
+		<ng-container matColumnDef="play">
+			<th mat-header-cell
+			    *matHeaderCellDef
+			    class="thin overflow-visible relative">
+				<button color="primary"
+				        mat-raised-button
+				        class="absolute"
+				        (click)="playAll()">
+					PLAY ALL
+				</button>
+			</th>
+			<td mat-cell
+			    *matCellDef="let song"
+			    class="thin">
+				<button mat-button
+				        mat-icon-button
+				        style="margin-left: 7px"
+				        [class.active]="playingSong && playingSong.id === song.id"
+				        (click)="playSong(song)">
+					<mat-icon>{{playingSong && playingSong.id === song.id && !currentSongPaused ? 'pause_circle_outline' : 'play_circle_outline'}}</mat-icon>
+				</button>
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="favorite">
+			<th mat-header-cell
+			    *matHeaderCellDef
+			    class="thin"></th>
+			<td mat-cell
+			    *matCellDef="let song"
+			    class="thin">
+				<button mat-button
+				        mat-icon-button
+				        (click)="toggleFavorite(song.id)">
+					<mat-icon>{{favorites.indexOf(song.id) === -1 ? 'star_border' : 'star'}}</mat-icon>
+				</button>
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="title">
+			<th mat-header-cell
+			    *matHeaderCellDef>Title</th>
+			<td mat-cell
+			    *matCellDef="let song">{{song.title}}</td>
+		</ng-container>
+
+		<ng-container matColumnDef="artist">
+			<th mat-header-cell
+			    *matHeaderCellDef>Artist</th>
+			<td mat-cell
+			    *matCellDef="let song">
+				<a [routerLink]="'/artist/' + song.artist.id">{{song.artist.name}}</a>
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="album">
+			<th mat-header-cell
+			    *matHeaderCellDef>Album</th>
+			<td mat-cell
+			    *matCellDef="let song">
+				<a [routerLink]="'/album/' + song.album.id">{{song.album.title}}</a>
+			</td>
+		</ng-container>
+
+		<tr mat-header-row
+		    *matHeaderRowDef="displayedColumns"></tr>
+		<tr mat-row
+		    *matRowDef="let row; columns: displayedColumns;"></tr>
+	</table>
+	<div *ngIf="!songs || !songs.length">
+		<h3 class="no-border">There are no results to show.</h3>
+	</div>
+</div>

@@ -1,0 +1,46 @@
+<header>
+	<mat-toolbar color="primary"
+	             class="mat-elevation-z5">
+		<div fxLayout
+		     fxLayoutAlign="start center"
+		     fxFill>
+			<div fxFlex="25%">
+				<button mat-button
+				        (click)="toggleNavDrawer()"
+				        class="mat-icon-button">
+					<mat-icon>menu</mat-icon>
+				</button>
+				<a routerLink="/"
+				   class="active">
+					<button mat-button
+					        class="mat-icon-button">
+						<mat-icon>home</mat-icon>
+					</button>
+				</a>
+			</div>
+			<div fxFlex>
+				<mat-form-field class="full-width">
+					<input matInput
+					       placeholder="Search"
+					       (keyup)="onSearch()"
+					       [(ngModel)]="searchPhrase" />
+				</mat-form-field>
+			</div>
+			<div fxFlex="30%"
+			     class="align-right">
+				<button mat-button
+				        class="mat-icon-button">
+					<mat-icon>language</mat-icon>
+				</button>
+				<button mat-button
+				        class="mat-icon-button">
+					<mat-icon>help</mat-icon>
+				</button>
+				<button mat-button
+				        class="mat-icon-button">
+					<mat-icon>account_circle</mat-icon>
+				</button>
+			</div>
+		</div>
+	</mat-toolbar>
+</header>

@@ -1,0 +1,35 @@
+{
+  "name": "vue-example",
+  "version": "1.0.0",
+  "description": "Vue.js example application with TypeScript and WebPack",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./node_modules/webpack/bin/webpack.js --mode production",
+    "buildDev": "node ./node_modules/webpack/bin/webpack.js --mode development",
+    "build-watch": "node ./node_modules/webpack/bin/webpack.js --watch --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rafal Wieczorek",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "ts-loader": "^4.3.0",
+    "typescript": "^2.8.3",
+    "vue": "^2.5.16",
+    "vue-loader": "^15.2.2",
+    "vue-property-decorator": "^6.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.9.1",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^2.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "rxios": "^1.1.2",
+    "vue": "^2.5.16",
+    "vue-material": "^1.0.0-beta-10.2",
+    "vue-router": "^3.0.1"
+  }
+}

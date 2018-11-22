@@ -1,0 +1,66 @@
+@import '../../styles/variables.scss';
+
+#player {
+	background: $player-background-color;
+	top: auto;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: $player-height;
+	padding: 19px 10px 10px;
+
+	> div {
+		padding: 0;
+	}
+
+	button.active:not([disabled]) span {
+		color: $color-accent;
+	}
+
+	.range > div {
+		transition: initial;
+	}
+
+	.song-details {
+		img {
+			max-height: 70px;
+		}
+
+		> div {
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+
+			a {
+				padding-left: 10px;
+			}
+		}
+
+		button {
+			margin-top: -5px;
+		}
+	}
+
+	.controls {
+		padding-bottom: 5px;
+	}
+
+	.progress {
+		padding: 0 10px;
+
+		> div {
+			overflow: hidden;
+			padding: 8px 0;
+			margin-top: -2px;
+		}
+	}
+
+	.volume, .close, .volume-button {
+		padding-top: 13px;
+	}
+
+	.volume > div {
+		margin-top: 11px;
+		padding: 10px 0;
+	}
+}

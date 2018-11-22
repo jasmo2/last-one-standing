@@ -1,0 +1,120 @@
+<mat-toolbar *ngIf="chosenSong">
+	<div fxLayout
+	     fxLayoutAlign="start center"
+	     fxFill>
+		<div fxFlex="25%"
+		     class="song-details">
+			<img [src]="'backend/covers/' + chosenSong.album.coverImg"
+			     class="pull-left" />
+			<div>
+				<a [routerLink]="'/album/' + chosenSong.album.id">
+					<b>{{chosenSong.title}}</b>
+				</a>
+			</div>
+			<div>
+				<a [routerLink]="'/artist/' + chosenSong.artist.id">{{chosenSong.artist.name}}</a>
+			</div>
+			<button mat-button
+			        class="mat-icon-button"
+			        (click)="toggleFavorite()">
+				<mat-icon>{{isFavorite ? 'star' : 'star_border'}}</mat-icon>
+			</button>
+		</div>
+		<div fxFlex>
+			<div fxLayout
+			     fxLayoutAlign="start center"
+			     fxFill
+			     class="controls">
+				<div fxFlex
+				     class="align-center">
+					<button mat-button
+					        class="mat-icon-button"
+					        [class.active]="isShufflingCollection"
+					        [disabled]="!isPlayingCollection"
+					        (click)="shuffle()">
+						<mat-icon>shuffle</mat-icon>
+					</button>
+					<button mat-button
+					        class="mat-icon-button"
+					        [disabled]="!isPlayingCollection"
+					        (click)="playPrev()">
+						<mat-icon>skip_previous</mat-icon>
+					</button>
+					<button mat-button
+					        class="mat-icon-button md-size-2x"
+					        (click)="playOrPause()">
+						<mat-icon style="font-size: 46px; margin-left: -20px"
+						          class="md-size-2x">{{currentSongPaused ? 'play_circle_outline' : 'pause_circle_outline'}}</mat-icon>
+					</button>
+					<button mat-button
+					        class="mat-icon-button"
+					        [disabled]="!isPlayingCollection"
+					        (click)="playNext()">
+						<mat-icon>skip_next</mat-icon>
+					</button>
+					<button mat-button
+					        class="mat-icon-button"
+					        [class.active]="isRepeatingCollection"
+					        [disabled]="!isPlayingCollection"
+					        (click)="repeat()">
+						<mat-icon>repeat</mat-icon>
+					</button>
+				</div>
+			</div>
+			<div fxLayoutAlign="start center"
+			     fxFill>
+				<div fxFlex="10%"
+				     class="align-right">
+					<div *ngIf="currentTime">
+						{{currentTime.minutes}}:{{currentTime.seconds.toString().padStart(2, '0')}}
+					</div>
+				</div>
+				<div fxFlex
+				     class="progress">
+					<div #timeEl
+					     (click)="changeTime($event)"
+					     (mouseenter)="skipTimeChange = true"
+					     (mouseleave)="skipTimeChange = false; requestCurrentTime()"
+					     (mousemove)="changeProgress($event)">
+						<mat-progress-bar mode="determinate"
+						                  [value]="progressValue">
+						</mat-progress-bar>
+					</div>
+				</div>
+				<div fxFlex="10%">
+					<div *ngIf="playingSongMetadata">
+						{{playingSongMetadata.time.minutes}}:{{playingSongMetadata.time.seconds.toString().padStart(2, '0')}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div fxFlex="5"></div>
+		<div fxFlex="5"
+		     class="volume-button align-right">
+			<button mat-button
+			        class="mat-icon-button"
+			        (click)="toggleMute()">
+				<mat-icon>{{volumeValue > 50 ? 'volume_up' : volumeValue > 10 ? 'volume_down' : volumeValue > 1 ? 'volume_mute' : 'volume_off'}}</mat-icon>
+			</button>
+		</div>
+		<div fxFlex="10%"
+		     class="volume">
+			<div #volumeEl
+			     (click)="setVolume($event)"
+			     (mousemove)="changeVolumeDisplayValue($event)"
+			     (mouseleave)="requestVolume()">
+				<mat-progress-bar mode="determinate"
+				                  [value]="volumeValue">
+				</mat-progress-bar>
+			</div>
+		</div>
+		<div fxFlex="5%"
+		     class="align-right close">
+			<button mat-button
+			        class="mat-icon-button"
+			        (click)="close()">
+				<mat-icon>close</mat-icon>
+			</button>
+		</div>
+	</div>
+</mat-toolbar>

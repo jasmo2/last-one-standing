@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 20;
+
+	.md-toolbar {
+		height: $header-toolbar-height;
+		min-height: auto;
+
+		.md-icon-button {
+			margin-top: 12px;
+		}
+
+		a button.md-button.md-icon-button i.md-icon {
+			color: white;
+		}
+	}
+}

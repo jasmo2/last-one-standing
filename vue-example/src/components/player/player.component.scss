@@ -1,0 +1,62 @@
+@import '../../styles/variables.scss';
+
+.md-toolbar.md-theme-default {
+	background: $player-background-color;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	height: $player-height;
+	min-height: auto;
+
+	.md-button[active]:not([disabled]) i.md-icon {
+		color: $border-color-accent;
+	}
+}
+
+.md-progress-bar.md-theme-default.md-determinate /deep/ .md-progress-bar-fill {
+	transition: initial;
+}
+
+.song-details {
+	img {
+		max-height: 70px;
+	}
+
+	> div {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+
+		a {
+			padding-left: 10px;
+		}
+	}
+
+	button.md-button.md-icon-button {
+		margin: -3px 0 0 0px;
+	}
+}
+
+.controls {
+	padding-bottom: 5px;
+}
+
+.progress {
+	padding: 0 10px;
+
+	> div {
+		overflow: hidden;
+		padding: 8px 0;
+	}
+}
+
+.volume, .close, .volume-button {
+	padding-top: 16px;
+}
+
+.volume > div {
+	margin-top: 9px;
+	padding: 8px 0;
+}

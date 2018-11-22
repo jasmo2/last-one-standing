@@ -1,0 +1,39 @@
+<div>
+	<h1>Home</h1>
+	<p>There are millions of songs. Play your favorites, discover new tracks, and build the perfect collection. You'll find readymade playlists to match your mood, put together by music fans and experts. Hear this week's latest singles and albums, and check out what's hot in the Top 50. There are millions of songs. Play your favorites, discover new tracks, and build the perfect collection. You'll find readymade playlists to match your mood, put together by music fans and experts. Hear this week's latest singles and albums, and check out what's hot in the Top 50.</p>
+
+	<h2>
+		<span>
+			Personalized music for you
+			<button mat-button
+			        class="mat-icon-button"
+			        (click)="refreshSuggested()">
+				<mat-icon>refresh</mat-icon>
+			</button>
+		</span>
+	</h2>
+	<ul xLayout="row"
+	    fxLayoutAlign="start"
+	    fxFill
+	    id="suggested-songs">
+		<li *ngFor="let song of suggestedSongs"
+		    fxFlex="25%">
+			<div class="img-wrapper"
+			     [class.active]="playingSong && playingSong.id === song.id"
+			     (click)="playSong(song)">
+				<img [src]="'backend/covers/' + song.album.coverImg" />
+				<mat-icon class="mat-size-3x">{{playingSong && playingSong.id === song.id && !currentSongPaused ? 'pause_circle_filled' : 'play_circle_filled'}}</mat-icon>
+			</div>
+			<div class="details">
+				<div class="title">
+					<a [routerLink]="'/album/' + song.album.id">
+						<b>{{song.title}}</b>
+					</a>
+				</div>
+				<div class="artist">
+					<a [routerLink]="'/artist/' + song.artist.id">{{song.artist.name}}</a>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>

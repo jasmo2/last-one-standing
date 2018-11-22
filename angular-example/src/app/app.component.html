@@ -1,0 +1,10 @@
+<div class="root"
+     [class.nav-drawer-open]="isNavDrawerOpen"
+     [class.player-open]="isPlayerOpen">
+	<header-toolbar-component></header-toolbar-component>
+	<nav-drawer-component></nav-drawer-component>
+	<main id="content">
+		<router-outlet></router-outlet>
+	</main>
+	<player-component></player-component>
+</div>

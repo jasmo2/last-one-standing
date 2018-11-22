@@ -1,0 +1,17 @@
+.song-list {
+	th {
+		font-size: 16px;
+
+		button {
+			left: 10px;
+			top: 10px;
+			z-index: 10;
+			min-width: 100px;
+		}
+	}
+
+	.thin {
+		width: 55px;
+    	padding: 0;
+	}
+}

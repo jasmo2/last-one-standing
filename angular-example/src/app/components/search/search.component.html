@@ -1,0 +1,54 @@
+<div>
+	<div fxLayout
+	     fxFill
+	     fxLayoutGap="20px"
+	     class="margin-bottom large">
+		<div fxFlex
+		     *ngIf="result.artists && result.artists.length">
+			<h1>Artists</h1>
+			<div fxLayout="row wrap">
+				<div fxFlex="25%"
+				     class="margin-bottom"
+				     *ngFor="let artist of result.artists">
+					<a [routerLink]="'/artist/' + artist.id"
+					   class="center">
+						<div>
+							<img class="rounded margin-bottom"
+							     [src]="'backend/artists/' + artist.img" />
+						</div>
+						<div>
+							{{artist.name}}
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div fxFlex
+		     *ngIf="result.albums && result.albums.length">
+			<h1>Albums</h1>
+			<div fxLayout="row wrap">
+				<div fxFlex="25%"
+				     class="margin-bottom"
+				     *ngFor="let album of result.albums">
+					<a [routerLink]="'/album/' + album.id"
+					   class="center">
+						<div>
+							<img class="rounded margin-bottom"
+							     [src]="'backend/covers/' + album.coverImg" />
+						</div>
+						<div>
+							{{album.title}}
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div fxLayout
+	     fxFill>
+		<div fxFlex>
+			<h1>Songs</h1>
+			<song-list-component [songs]="result.songs"></song-list-component>
+		</div>
+	</div>
+</div>

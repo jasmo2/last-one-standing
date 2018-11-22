@@ -1,0 +1,15 @@
+<mat-drawer-container>
+	<mat-drawer [opened]="show"
+	            mode="side">
+		<div class="menu-links">
+			<a routerLink="/favorites"
+			   routerLinkActive="active">
+				<mat-icon>star</mat-icon> Favorites
+			</a>
+			<a routerLink="/playlists"
+			   routerLinkActive="active">
+				<mat-icon>playlist_play</mat-icon> Playlists
+			</a>
+		</div>
+	</mat-drawer>
+</mat-drawer-container>

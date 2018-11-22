@@ -1,0 +1,102 @@
+\n\n--- ANGULAR --- \n\n
+
+> angular-app@0.0.0 build-prod /Users/lest/Code/angular-vue-react/angular-example
+> ng build --prod --build-optimizer --stats-json
+
+
+[0mDate: [1m[37m2018-11-04T19:00:39.242Z[39m[22m[0m
+[0mHash: [1m[37mbcc294e806ea63b7c5aa[39m[22m[0m
+[0mTime: [1m[37m33975[39m[22mms[0m
+[0mchunk {[1m[33m0[39m[22m} [1m[32mruntime.a66f828dca56eeb90e02.js[39m[22m (runtime) 1.05 kB [1m[33m[entry][39m[22m[1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33m1[39m[22m} [1m[32mpolyfills.8e9914ad6ce185d7d679.js[39m[22m (polyfills) 59.6 kB [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33m2[39m[22m} [1m[32mmain.603474785e64f64adef2.js[39m[22m (main) 686 kB [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m
+\n\n--- REACT --- \n\n
+
+> react-example@1.0.0 build /Users/lest/Code/angular-vue-react/react-example
+> node ./node_modules/webpack/bin/webpack.js --mode production
+
+Hash: a0e53ac5cc1694d7a57e
+Version: webpack 4.16.2
+Time: 14566ms
+Built at: 2018-11-04 14:00:55
+        Asset      Size  Chunks                    Chunk Names
+    bundle.js   350 KiB       0  [emitted]  [big]  main
+bundle.js.map  1.38 MiB       0  [emitted]         main
+  [1] external "React" 42 bytes {0} [built]
+ [17] external "ReactDOM" 42 bytes {0} [built]
+ [22] ./node_modules/react-router-dom/es/index.js + 34 modules 80.3 KiB {0} [built]
+      |    35 modules
+ [29] ./src/agents/music.agent.ts 2.91 KiB {0} [built]
+ [37] (webpack)/buildin/global.js 489 bytes {0} [built]
+ [60] ./src/enums/storage-items.enum.ts 495 bytes {0} [built]
+ [61] ./src/services/storage.service.ts 789 bytes {0} [built]
+ [62] ./src/services/music.service.ts 9.38 KiB {0} [built]
+ [81] ./src/services/favorites.service.ts 1.48 KiB {0} [built]
+[102] ./src/services/drawer.service.ts 1.11 KiB {0} [built]
+[157] ./src/index.tsx 880 bytes {0} [built]
+[218] ./src/main.tsx 3.76 KiB {0} [built]
+[219] ./src/main.scss 1.33 KiB {0} [built]
+[239] ./src/agents/album.agent.ts 1.43 KiB {0} [built]
+[293] ./src/agents/artist.agent.ts 1.44 KiB {0} [built]
+    + 396 hidden modules
+
+WARNING in ./node_modules/rxios/dist/index.js
+Module Warning (from ./node_modules/source-map-loader/index.js):
+(Emitted value instead of an instance of Error) Cannot find source file '../src/index.ts': Error: Can't resolve '../src/index.ts' in '/Users/lest/Code/angular-vue-react/react-example/node_modules/rxios/dist'
+ @ ./src/agents/base.agent.ts 3:14-30
+ @ ./src/agents/music.agent.ts
+ @ ./src/services/music.service.ts
+ @ ./src/main.tsx
+ @ ./src/index.tsx
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  bundle.js (350 KiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (350 KiB)
+      bundle.js
+
+
+WARNING in webpack performance recommendations: 
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+Webpack Bundle Analyzer saved report to /Users/lest/Code/angular-vue-react/react-example/dist/report.html
+\n\n--- VUE --- \n\n
+
+> vue-example@1.0.0 build /Users/lest/Code/angular-vue-react/vue-example
+> node ./node_modules/webpack/bin/webpack.js --mode production
+
+Hash: 8e98d436b2ea32a1ea00
+Version: webpack 4.16.2
+Time: 11107ms
+Built at: 2018-11-04 14:01:07
+   Asset     Size  Chunks                    Chunk Names
+build.js  686 KiB       0  [emitted]  [big]  main
+ [5] ./node_modules/vue-style-loader/lib/addStylesClient.js + 1 modules 6.71 KiB {0} [built]
+     |    2 modules
+ [7] (webpack)/buildin/global.js 489 bytes {0} [built]
+[15] ./node_modules/vue-style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/lib/loader.js!./src/main.scss?vue&type=style&index=0&lang=css& 1.33 KiB {0} [built]
+[83] ./src/main.scss?vue&type=style&index=0&lang=css& 504 bytes {0} [built]
+[84] ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/lib/loader.js!./src/main.scss?vue&type=style&index=0&lang=css& 17.9 KiB {0} [built]
+[85] ./src/index.ts + 69 modules 168 KiB {0} [built]
+     | ./src/services/favorites.service.ts 1.31 KiB [built]
+     | ./src/index.ts 1.47 KiB [built]
+     | ./src/main.ts?vue&type=script&lang=js& 214 bytes [built]
+     | ./src/main.vue?vue&type=template&id=3c208292& 196 bytes [built]
+     | ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/main.vue?vue&type=template&id=3c208292& 621 bytes [built]
+     | ./node_modules/ts-loader??ref--4!./src/main.ts?vue&type=script&lang=js& 2.58 KiB [built]
+     | ./src/agents/music.agent.ts 2.82 KiB [built]
+     | ./src/main.vue 1.1 KiB [built]
+     | ./src/agents/artist.agent.ts 1.32 KiB [built]
+     | ./src/services/header-toolbar.service.ts 713 bytes [built]
+     | ./src/agents/album.agent.ts 1.31 KiB [built]
+     | ./src/services/music.service.ts 8.85 KiB [built]
+     | ./src/services/drawer.service.ts 984 bytes [built]
+     | ./src/agents/base.agent.ts 193 bytes [built]
+     | ./src/enums/storage-items.enum.ts 384 bytes [built]
+     |     + 55 hidden modules
+    + 80 hidden modules
+Webpack Bundle Analyzer saved report to /Users/lest/Code/angular-vue-react/vue-example/dist/report.html

@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+
+#nav-drawer {
+	> div {
+		padding: 15px;
+		top: $header-toolbar-height;
+		z-index: 1099;
+		width: $nav-drawer-width;
+		border: none;
+	}
+
+	.menu-links a[href] {
+		display: block;
+		margin-bottom: 15px;
+
+		span.material-icons {
+			float: left;
+    		margin: -3px 5px 0 0;
+		}
+
+		&.router-link-exact-active {
+			color: white;
+		}
+	}
+}

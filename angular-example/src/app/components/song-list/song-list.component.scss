@@ -1,0 +1,16 @@
+table {
+	th.mat-header-cell {
+		font-size: 16px;
+	}
+
+	th /deep/ button {
+		left: 8px;
+		top: 8px;
+		z-index: 10;
+	}
+
+	.thin, td.mat-cell.thin:first-child {
+		width: 65px;
+		padding: 0;
+	}
+}

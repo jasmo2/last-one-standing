@@ -1,0 +1,26 @@
+vue:
+- private class members cannot be accessed, so there's no point in using private/public
+- beforeCreate hook has no initialized vars
+- dont have to register router components
+- no native rxjs for $http
+
+13 seconds - 680KB
+
+Performance.now():
+
+From home to search:
+1st time and next times - 2 - 5ms
+
+Home component load:
+270ms
+
+Displaying favorites list (actually displaying)
+1st time and next times - 2 - 5ms
+
+
+Performance tool:
+Loading - JS Heap 19MB
+Screens
+
+Memory tool:
+Home -> Search 'a' -> Play All -> Select Artist -> Add to Favorites -> Go to favorites

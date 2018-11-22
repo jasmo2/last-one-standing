@@ -1,0 +1,27 @@
+a {
+	&:hover img {
+		transform: scale(1.1);
+	}
+
+	img {
+		transition: all 100ms ease;
+		width: 60%;
+	}
+}
+
+img.rounded {
+    border-radius: 100%;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.margin-bottom {
+    margin-bottom: 10px;
+
+    &.large {
+        margin-bottom: 20px;
+    }
+}
